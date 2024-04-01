@@ -4,3 +4,5 @@
     res = '${list[2]}-${list[1]}-${list[0]}';
     return res;
   }
+
+  const String spThemeKey = 'THEME';

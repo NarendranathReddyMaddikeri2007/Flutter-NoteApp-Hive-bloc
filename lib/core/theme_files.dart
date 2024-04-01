@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 final globalDarkTheme = ThemeData(
-    scaffoldBackgroundColor: const Color(0xff181d20),
+    //scaffoldBackgroundColor: const Color(0xff181d20),
+    scaffoldBackgroundColor: Colors.black,
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: Color(0xff2f4959),
       foregroundColor: Color(0xffc5c8ca),
-      splashColor: Colors.orange,
+      //splashColor: Colors.orange,
       elevation: 10,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusDirectional.only(
@@ -14,6 +15,7 @@ final globalDarkTheme = ThemeData(
               bottomStart: Radius.circular(8),
               bottomEnd: Radius.circular(16))),
     ),
+    
     popupMenuTheme: const PopupMenuThemeData(
         enableFeedback: true,
         elevation: 10,
@@ -125,11 +127,11 @@ final globalDarkTheme = ThemeData(
 //========================================================================================
 
 final globalLightTheme = ThemeData(
-    scaffoldBackgroundColor: Colors.white,//const Color(0xffeef4f8)
+    scaffoldBackgroundColor: Colors.white, //const Color(0xffeef4f8)
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: Color(0xff3487a5),
       foregroundColor: Colors.white,
-      splashColor: Colors.deepOrange,
+      //splashColor: Colors.deepOrange,
       elevation: 10,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusDirectional.only(
@@ -138,7 +140,7 @@ final globalLightTheme = ThemeData(
               bottomStart: Radius.circular(8),
               bottomEnd: Radius.circular(16))),
     ),
-        popupMenuTheme: const PopupMenuThemeData(
+    popupMenuTheme: const PopupMenuThemeData(
         enableFeedback: true,
         elevation: 10,
         labelTextStyle:
@@ -176,12 +178,22 @@ final globalLightTheme = ThemeData(
         titleTextStyle:
             TextStyle(color: Color.fromRGBO(255, 255, 255, 1), fontSize: 20)),
     textTheme: TextTheme(
-        bodyLarge: const TextStyle(
-          color: Color(0xff2f3336),
+              bodyLarge: const TextStyle(
+          color: Colors.black,
+          overflow: TextOverflow.ellipsis,
+        ),
+        labelMedium: const TextStyle(
+          fontSize: 15,
+          color: Colors.black,
+          overflow: TextOverflow.ellipsis,
+        ),
+        labelSmall: const TextStyle(
+          fontSize: 12,
+          color: Colors.black,
           overflow: TextOverflow.ellipsis,
         ),
         bodySmall: const TextStyle(
-          color: Color(0xff2f3336),
+          color: Colors.black,
           overflow: TextOverflow.ellipsis,
         ),
         displayMedium: const TextStyle(
@@ -191,8 +203,47 @@ final globalLightTheme = ThemeData(
         titleMedium: TextStyle(
           overflow: TextOverflow.ellipsis,
           color:
-              Colors.orangeAccent.withAlpha(1), // <-- TextFormField input color
+              Colors.orangeAccent.withAlpha(1),
         )),
+        // bodyLarge: const TextStyle(
+        //   color: Colors.black,
+        //   overflow: TextOverflow.ellipsis,
+        // ),
+        // labelSmall: const TextStyle(
+        //   fontSize: 12,
+        //   color: Colors.black,
+        //   overflow: TextOverflow.ellipsis,
+        // ),
+        // bodySmall: TextStyle(color: Colors.black,),
+        // titleSmall: TextStyle(color: Colors.black,),
+        // displaySmall: TextStyle(color: Colors.black,),
+        // headlineSmall: TextStyle(color: Colors.black,),
+
+        // bodyMedium: TextStyle(color: Colors.black,),
+        // labelMedium: TextStyle(color: Colors.black,),
+        // titleMedium: TextStyle(color: Colors.black,),
+        // displayMedium:TextStyle(color: Colors.black,) ,
+        // headlineMedium:TextStyle(color: Colors.black,) ,
+
+        // labelLarge:TextStyle(color: Colors.black,)  ,
+        // bodyLarge:TextStyle(color: Colors.black,)  ,
+        // titleLarge: TextStyle(color: Colors.black,) ,
+        // displayLarge: TextStyle(color: Colors.black,) ,
+        // headlineLarge: TextStyle(color: Colors.black,) ,
+
+        // bodySmall: const TextStyle(
+        //   color: Color(0xff2f3336),
+        //   overflow: TextOverflow.ellipsis,
+        // ),
+        // displayMedium: const TextStyle(
+        //     color: Colors.orangeAccent,
+        //     overflow: TextOverflow.ellipsis,
+        //     fontWeight: FontWeight.bold),
+        // titleMedium: TextStyle(
+        //   overflow: TextOverflow.ellipsis,
+        //   color:
+        //       Colors.orangeAccent.withAlpha(1), // <-- TextFormField input color
+        // )
     inputDecorationTheme: InputDecorationTheme(
       border: InputBorder.none,
       errorBorder: InputBorder.none,

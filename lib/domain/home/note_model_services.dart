@@ -8,4 +8,5 @@ abstract class NotesModelServices {
   Future <void> insertNote(NoteModel note);
   Future <void> updateNote(NoteModel note);
   Future <void> deleteNote(int id);
+ // Future<void> changeTheme(ThemeMode newTheme);
 }

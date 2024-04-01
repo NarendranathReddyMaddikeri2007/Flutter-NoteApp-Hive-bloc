@@ -37,95 +37,94 @@ class NotesFormScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Note App'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: Column(
-          children: [
-            TextFormField(
-              controller: _titleController,
-              decoration: const InputDecoration(
-                hintText: 'Enter title here',
-              ),
-              minLines: 1,
+      body: ListView(
+        padding: const EdgeInsets.all(15),
+        scrollDirection: Axis.vertical,
+        children: [
+          TextFormField(
+            controller: _titleController,
+            decoration: const InputDecoration(
+              hintText: 'Enter title here',
             ),
-            const SizedBox(
-              height: 10,
+            minLines: 1,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          TextFormField(
+            controller: _descriptionController,
+            decoration: const InputDecoration(
+              hintText: 'Enter description here',
             ),
-            TextFormField(
-              controller: _descriptionController,
-              decoration: const InputDecoration(
-                hintText: 'Enter description here',
-              ),
-              maxLines: 10,
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            SizedBox(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  OutlinedButton(
-                      onPressed: () {
-                        final title = _titleController.value.text;
-                        final description = _descriptionController.value.text;
-                        final DateTime date = DateTime.now();
-
-                        if (title.isEmpty || description.isEmpty) {
-                          return;
-                        }
-
-                        if (type == ActionType.addNote) {
-                          final NoteModel newNote = NoteModel(
-                            title: title,
-                            description: description,
-                            date: date,
-                          );
-                          context.read<HomeBloc>().add(AddNote(note: newNote));
-                        } else {
-                          final NoteModel newNote = NoteModel(
-                            id: note!.key,
-                            title: title,
-                            description: description,
-                            date: type == ActionType.addNote
-                                ? note!.date
-                                : DateTime.now(),
-                          );
-                          context
-                              .read<HomeBloc>()
-                              .add(UpdateNote(note: newNote));
-                        }
-                        Navigator.of(context).pushAndRemoveUntil(
-                          MaterialPageRoute(builder: (ctx) => HomeScreen()),
-                          (route) => false,
+            maxLines: 10,
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          SizedBox(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                OutlinedButton(
+                    onPressed: () {
+                      final title = _titleController.value.text;
+                      final description = _descriptionController.value.text;
+                      final DateTime date = DateTime.now();
+      
+                      if (title.isEmpty || description.isEmpty) {
+                        return;
+                      }
+      
+                      if (type == ActionType.addNote) {
+                        final NoteModel newNote = NoteModel(
+                          title: title,
+                          description: description,
+                          date: date,
                         );
-                      },
-                      child: Text(
-                          type == ActionType.editNote
-                              ? 'Update Note'
-                              : 'Add Note',
-                          style: const TextStyle(color: Colors.white))),
-                  Visibility(
-                      visible: type == ActionType.editNote,
-                      child: TextButton(
-                          onPressed: () {
-                            final noteId = note?.id;
-                            if (noteId != null) {
-                              context
-                                  .read<HomeBloc>()
-                                  .add(DeleteNote(id: noteId));
-                            }
-                            Navigator.of(context).pushAndRemoveUntil(
-                              MaterialPageRoute(builder: (ctx) => HomeScreen()),
-                              (route) => false,
-                            );
-                          },
-                          child: const Text('Delete Note'))),
-                ],
-              ),
-            )
-          ],
-        ),
+                        context.read<HomeBloc>().add(AddNote(note: newNote));
+                      } else {
+                        final NoteModel newNote = NoteModel(
+                          id: note!.key,
+                          title: title,
+                          description: description,
+                          date: type == ActionType.addNote
+                              ? note!.date
+                              : DateTime.now(),
+                        );
+                        context
+                            .read<HomeBloc>()
+                            .add(UpdateNote(note: newNote));
+                      }
+                      Navigator.of(context).pushAndRemoveUntil(
+                        MaterialPageRoute(builder: (ctx) => HomeScreen()),
+                        (route) => false,
+                      );
+                    },
+                    child: Text(
+                        type == ActionType.editNote
+                            ? 'Update Note'
+                            : 'Add Note',
+                        style: Theme.of(context).textTheme.labelSmall)),
+                Visibility(
+                    visible: type == ActionType.editNote,
+                    child: TextButton(
+                        onPressed: () {
+                          final noteId = note?.id;
+                          if (noteId != null) {
+                            context
+                                .read<HomeBloc>()
+                                .add(DeleteNote(id: noteId));
+                          }
+                          Navigator.of(context).pushAndRemoveUntil(
+                            MaterialPageRoute(builder: (ctx) => HomeScreen()),
+                            (route) => false,
+                          );
+                        },
+                        child: const Text('Delete Note'))),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

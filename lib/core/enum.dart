@@ -7,11 +7,9 @@ enum ActionType {
   changeLocale,
 }
 
-enum StateType {
-  darkTheme,
-  lightTheme,
-  greenTheme,
-  blueTheme,
+enum AppTheme { darkTheme, lightTheme, greenTheme, blueTheme, systemTheme }
+
+enum AppLocale {
   englishLocale,
   spanishLocale,
   franchLocale,
@@ -21,6 +19,9 @@ enum StateType {
   chineseLocale,
   russianLocale,
   germanLocale,
+}
+
+enum AppLayout {
   listLayout,
   gridLayout,
 }

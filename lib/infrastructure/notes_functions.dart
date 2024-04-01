@@ -1,6 +1,7 @@
 
 
 
+import 'package:flutter/src/material/app.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:note_app1/domain/home/model/note_model.dart';
@@ -10,7 +11,6 @@ const dbName = 'notes-database';
 
 @LazySingleton(as: NotesModelServices)
 class NotesFunctions implements NotesModelServices {
-
   // delete note from hive using key
   @override
   Future<void> deleteNote(int id) async {
@@ -46,5 +46,13 @@ class NotesFunctions implements NotesModelServices {
     final box = await Hive.openBox<NoteModel>(dbName);
     // here old key == id, note(updated note)
     await box.put(note.id, note);
+  }
+
+
+  int getThemeCode({required ThemeMode theme}){
+       switch(theme){
+           case ThemeMode.dark: return 0;
+           default: return 1;
+       }
   }
 }

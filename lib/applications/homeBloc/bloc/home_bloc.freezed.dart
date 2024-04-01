@@ -22,7 +22,6 @@ mixin _$HomeEvent {
     required TResult Function(NoteModel note) updateNote,
     required TResult Function(NoteModel note) addNote,
     required TResult Function(int id) deleteNote,
-    required TResult Function(StateType newLocale) changeLocale,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,7 +30,6 @@ mixin _$HomeEvent {
     TResult? Function(NoteModel note)? updateNote,
     TResult? Function(NoteModel note)? addNote,
     TResult? Function(int id)? deleteNote,
-    TResult? Function(StateType newLocale)? changeLocale,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,7 +38,6 @@ mixin _$HomeEvent {
     TResult Function(NoteModel note)? updateNote,
     TResult Function(NoteModel note)? addNote,
     TResult Function(int id)? deleteNote,
-    TResult Function(StateType newLocale)? changeLocale,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -50,7 +47,6 @@ mixin _$HomeEvent {
     required TResult Function(UpdateNote value) updateNote,
     required TResult Function(AddNote value) addNote,
     required TResult Function(DeleteNote value) deleteNote,
-    required TResult Function(ChangeLocale value) changeLocale,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,7 +55,6 @@ mixin _$HomeEvent {
     TResult? Function(UpdateNote value)? updateNote,
     TResult? Function(AddNote value)? addNote,
     TResult? Function(DeleteNote value)? deleteNote,
-    TResult? Function(ChangeLocale value)? changeLocale,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -68,7 +63,6 @@ mixin _$HomeEvent {
     TResult Function(UpdateNote value)? updateNote,
     TResult Function(AddNote value)? addNote,
     TResult Function(DeleteNote value)? deleteNote,
-    TResult Function(ChangeLocale value)? changeLocale,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -133,7 +127,6 @@ class _$GetNotesImpl implements GetNotes {
     required TResult Function(NoteModel note) updateNote,
     required TResult Function(NoteModel note) addNote,
     required TResult Function(int id) deleteNote,
-    required TResult Function(StateType newLocale) changeLocale,
   }) {
     return getNotes();
   }
@@ -145,7 +138,6 @@ class _$GetNotesImpl implements GetNotes {
     TResult? Function(NoteModel note)? updateNote,
     TResult? Function(NoteModel note)? addNote,
     TResult? Function(int id)? deleteNote,
-    TResult? Function(StateType newLocale)? changeLocale,
   }) {
     return getNotes?.call();
   }
@@ -157,7 +149,6 @@ class _$GetNotesImpl implements GetNotes {
     TResult Function(NoteModel note)? updateNote,
     TResult Function(NoteModel note)? addNote,
     TResult Function(int id)? deleteNote,
-    TResult Function(StateType newLocale)? changeLocale,
     required TResult orElse(),
   }) {
     if (getNotes != null) {
@@ -173,7 +164,6 @@ class _$GetNotesImpl implements GetNotes {
     required TResult Function(UpdateNote value) updateNote,
     required TResult Function(AddNote value) addNote,
     required TResult Function(DeleteNote value) deleteNote,
-    required TResult Function(ChangeLocale value) changeLocale,
   }) {
     return getNotes(this);
   }
@@ -185,7 +175,6 @@ class _$GetNotesImpl implements GetNotes {
     TResult? Function(UpdateNote value)? updateNote,
     TResult? Function(AddNote value)? addNote,
     TResult? Function(DeleteNote value)? deleteNote,
-    TResult? Function(ChangeLocale value)? changeLocale,
   }) {
     return getNotes?.call(this);
   }
@@ -197,7 +186,6 @@ class _$GetNotesImpl implements GetNotes {
     TResult Function(UpdateNote value)? updateNote,
     TResult Function(AddNote value)? addNote,
     TResult Function(DeleteNote value)? deleteNote,
-    TResult Function(ChangeLocale value)? changeLocale,
     required TResult orElse(),
   }) {
     if (getNotes != null) {
@@ -279,7 +267,6 @@ class _$UpdateNoteImpl implements UpdateNote {
     required TResult Function(NoteModel note) updateNote,
     required TResult Function(NoteModel note) addNote,
     required TResult Function(int id) deleteNote,
-    required TResult Function(StateType newLocale) changeLocale,
   }) {
     return updateNote(note);
   }
@@ -291,7 +278,6 @@ class _$UpdateNoteImpl implements UpdateNote {
     TResult? Function(NoteModel note)? updateNote,
     TResult? Function(NoteModel note)? addNote,
     TResult? Function(int id)? deleteNote,
-    TResult? Function(StateType newLocale)? changeLocale,
   }) {
     return updateNote?.call(note);
   }
@@ -303,7 +289,6 @@ class _$UpdateNoteImpl implements UpdateNote {
     TResult Function(NoteModel note)? updateNote,
     TResult Function(NoteModel note)? addNote,
     TResult Function(int id)? deleteNote,
-    TResult Function(StateType newLocale)? changeLocale,
     required TResult orElse(),
   }) {
     if (updateNote != null) {
@@ -319,7 +304,6 @@ class _$UpdateNoteImpl implements UpdateNote {
     required TResult Function(UpdateNote value) updateNote,
     required TResult Function(AddNote value) addNote,
     required TResult Function(DeleteNote value) deleteNote,
-    required TResult Function(ChangeLocale value) changeLocale,
   }) {
     return updateNote(this);
   }
@@ -331,7 +315,6 @@ class _$UpdateNoteImpl implements UpdateNote {
     TResult? Function(UpdateNote value)? updateNote,
     TResult? Function(AddNote value)? addNote,
     TResult? Function(DeleteNote value)? deleteNote,
-    TResult? Function(ChangeLocale value)? changeLocale,
   }) {
     return updateNote?.call(this);
   }
@@ -343,7 +326,6 @@ class _$UpdateNoteImpl implements UpdateNote {
     TResult Function(UpdateNote value)? updateNote,
     TResult Function(AddNote value)? addNote,
     TResult Function(DeleteNote value)? deleteNote,
-    TResult Function(ChangeLocale value)? changeLocale,
     required TResult orElse(),
   }) {
     if (updateNote != null) {
@@ -430,7 +412,6 @@ class _$AddNoteImpl implements AddNote {
     required TResult Function(NoteModel note) updateNote,
     required TResult Function(NoteModel note) addNote,
     required TResult Function(int id) deleteNote,
-    required TResult Function(StateType newLocale) changeLocale,
   }) {
     return addNote(note);
   }
@@ -442,7 +423,6 @@ class _$AddNoteImpl implements AddNote {
     TResult? Function(NoteModel note)? updateNote,
     TResult? Function(NoteModel note)? addNote,
     TResult? Function(int id)? deleteNote,
-    TResult? Function(StateType newLocale)? changeLocale,
   }) {
     return addNote?.call(note);
   }
@@ -454,7 +434,6 @@ class _$AddNoteImpl implements AddNote {
     TResult Function(NoteModel note)? updateNote,
     TResult Function(NoteModel note)? addNote,
     TResult Function(int id)? deleteNote,
-    TResult Function(StateType newLocale)? changeLocale,
     required TResult orElse(),
   }) {
     if (addNote != null) {
@@ -470,7 +449,6 @@ class _$AddNoteImpl implements AddNote {
     required TResult Function(UpdateNote value) updateNote,
     required TResult Function(AddNote value) addNote,
     required TResult Function(DeleteNote value) deleteNote,
-    required TResult Function(ChangeLocale value) changeLocale,
   }) {
     return addNote(this);
   }
@@ -482,7 +460,6 @@ class _$AddNoteImpl implements AddNote {
     TResult? Function(UpdateNote value)? updateNote,
     TResult? Function(AddNote value)? addNote,
     TResult? Function(DeleteNote value)? deleteNote,
-    TResult? Function(ChangeLocale value)? changeLocale,
   }) {
     return addNote?.call(this);
   }
@@ -494,7 +471,6 @@ class _$AddNoteImpl implements AddNote {
     TResult Function(UpdateNote value)? updateNote,
     TResult Function(AddNote value)? addNote,
     TResult Function(DeleteNote value)? deleteNote,
-    TResult Function(ChangeLocale value)? changeLocale,
     required TResult orElse(),
   }) {
     if (addNote != null) {
@@ -581,7 +557,6 @@ class _$DeleteNoteImpl implements DeleteNote {
     required TResult Function(NoteModel note) updateNote,
     required TResult Function(NoteModel note) addNote,
     required TResult Function(int id) deleteNote,
-    required TResult Function(StateType newLocale) changeLocale,
   }) {
     return deleteNote(id);
   }
@@ -593,7 +568,6 @@ class _$DeleteNoteImpl implements DeleteNote {
     TResult? Function(NoteModel note)? updateNote,
     TResult? Function(NoteModel note)? addNote,
     TResult? Function(int id)? deleteNote,
-    TResult? Function(StateType newLocale)? changeLocale,
   }) {
     return deleteNote?.call(id);
   }
@@ -605,7 +579,6 @@ class _$DeleteNoteImpl implements DeleteNote {
     TResult Function(NoteModel note)? updateNote,
     TResult Function(NoteModel note)? addNote,
     TResult Function(int id)? deleteNote,
-    TResult Function(StateType newLocale)? changeLocale,
     required TResult orElse(),
   }) {
     if (deleteNote != null) {
@@ -621,7 +594,6 @@ class _$DeleteNoteImpl implements DeleteNote {
     required TResult Function(UpdateNote value) updateNote,
     required TResult Function(AddNote value) addNote,
     required TResult Function(DeleteNote value) deleteNote,
-    required TResult Function(ChangeLocale value) changeLocale,
   }) {
     return deleteNote(this);
   }
@@ -633,7 +605,6 @@ class _$DeleteNoteImpl implements DeleteNote {
     TResult? Function(UpdateNote value)? updateNote,
     TResult? Function(AddNote value)? addNote,
     TResult? Function(DeleteNote value)? deleteNote,
-    TResult? Function(ChangeLocale value)? changeLocale,
   }) {
     return deleteNote?.call(this);
   }
@@ -645,7 +616,6 @@ class _$DeleteNoteImpl implements DeleteNote {
     TResult Function(UpdateNote value)? updateNote,
     TResult Function(AddNote value)? addNote,
     TResult Function(DeleteNote value)? deleteNote,
-    TResult Function(ChangeLocale value)? changeLocale,
     required TResult orElse(),
   }) {
     if (deleteNote != null) {
@@ -661,159 +631,6 @@ abstract class DeleteNote implements HomeEvent {
   int get id;
   @JsonKey(ignore: true)
   _$$DeleteNoteImplCopyWith<_$DeleteNoteImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ChangeLocaleImplCopyWith<$Res> {
-  factory _$$ChangeLocaleImplCopyWith(
-          _$ChangeLocaleImpl value, $Res Function(_$ChangeLocaleImpl) then) =
-      __$$ChangeLocaleImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({StateType newLocale});
-}
-
-/// @nodoc
-class __$$ChangeLocaleImplCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$ChangeLocaleImpl>
-    implements _$$ChangeLocaleImplCopyWith<$Res> {
-  __$$ChangeLocaleImplCopyWithImpl(
-      _$ChangeLocaleImpl _value, $Res Function(_$ChangeLocaleImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? newLocale = null,
-  }) {
-    return _then(_$ChangeLocaleImpl(
-      newLocale: null == newLocale
-          ? _value.newLocale
-          : newLocale // ignore: cast_nullable_to_non_nullable
-              as StateType,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ChangeLocaleImpl implements ChangeLocale {
-  const _$ChangeLocaleImpl({required this.newLocale});
-
-  @override
-  final StateType newLocale;
-
-  @override
-  String toString() {
-    return 'HomeEvent.changeLocale(newLocale: $newLocale)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChangeLocaleImpl &&
-            (identical(other.newLocale, newLocale) ||
-                other.newLocale == newLocale));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, newLocale);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChangeLocaleImplCopyWith<_$ChangeLocaleImpl> get copyWith =>
-      __$$ChangeLocaleImplCopyWithImpl<_$ChangeLocaleImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getNotes,
-    required TResult Function(NoteModel note) updateNote,
-    required TResult Function(NoteModel note) addNote,
-    required TResult Function(int id) deleteNote,
-    required TResult Function(StateType newLocale) changeLocale,
-  }) {
-    return changeLocale(newLocale);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getNotes,
-    TResult? Function(NoteModel note)? updateNote,
-    TResult? Function(NoteModel note)? addNote,
-    TResult? Function(int id)? deleteNote,
-    TResult? Function(StateType newLocale)? changeLocale,
-  }) {
-    return changeLocale?.call(newLocale);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getNotes,
-    TResult Function(NoteModel note)? updateNote,
-    TResult Function(NoteModel note)? addNote,
-    TResult Function(int id)? deleteNote,
-    TResult Function(StateType newLocale)? changeLocale,
-    required TResult orElse(),
-  }) {
-    if (changeLocale != null) {
-      return changeLocale(newLocale);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(GetNotes value) getNotes,
-    required TResult Function(UpdateNote value) updateNote,
-    required TResult Function(AddNote value) addNote,
-    required TResult Function(DeleteNote value) deleteNote,
-    required TResult Function(ChangeLocale value) changeLocale,
-  }) {
-    return changeLocale(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetNotes value)? getNotes,
-    TResult? Function(UpdateNote value)? updateNote,
-    TResult? Function(AddNote value)? addNote,
-    TResult? Function(DeleteNote value)? deleteNote,
-    TResult? Function(ChangeLocale value)? changeLocale,
-  }) {
-    return changeLocale?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetNotes value)? getNotes,
-    TResult Function(UpdateNote value)? updateNote,
-    TResult Function(AddNote value)? addNote,
-    TResult Function(DeleteNote value)? deleteNote,
-    TResult Function(ChangeLocale value)? changeLocale,
-    required TResult orElse(),
-  }) {
-    if (changeLocale != null) {
-      return changeLocale(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ChangeLocale implements HomeEvent {
-  const factory ChangeLocale({required final StateType newLocale}) =
-      _$ChangeLocaleImpl;
-
-  StateType get newLocale;
-  @JsonKey(ignore: true)
-  _$$ChangeLocaleImplCopyWith<_$ChangeLocaleImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

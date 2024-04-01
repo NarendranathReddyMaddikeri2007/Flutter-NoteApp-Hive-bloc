@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app1/applications/homeBloc/bloc/home_bloc.dart';
+import 'package:note_app1/applications/layoutBloc/bloc/layout_bloc.dart';
+import 'package:note_app1/applications/themeBloc/bloc/theme_bloc.dart';
 import 'package:note_app1/core/enum.dart';
-import 'package:note_app1/domain/home/model/note_model.dart';
 import 'package:note_app1/presentations/widgets/note_item_screen.dart';
 import 'package:note_app1/presentations/widgets/notes_form_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
-
+  late ThemeMode theme;
   bool isListView = false;
-  final TextEditingController _searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
+    theme = BlocProvider.of<ThemeBloc>(context).state.themeMode;
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<HomeBloc>().add(const GetNotes());
     });
@@ -23,48 +22,93 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Note App'),
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.dark_mode),
+          BlocBuilder<ThemeBloc, ThemeState>(
+            buildWhen: (previous, current) =>
+                previous.themeMode != current.themeMode,
+            builder: (context, state) {
+              return IconButton(
+                onPressed: () {
+                  if (state.themeMode == ThemeMode.dark) {
+                    BlocProvider.of<ThemeBloc>(context)
+                        .add(const ChangeTheme(themeMode: ThemeMode.dark));
+                  } else if (state.themeMode == ThemeMode.light) {
+                    BlocProvider.of<ThemeBloc>(context)
+                        .add(const ChangeTheme(themeMode: ThemeMode.light));
+                  }
+                },
+                icon: state.themeMode == ThemeMode.dark
+                    ? const Icon(Icons.dark_mode)
+                    : const Icon(Icons.light_mode),
+              );
+            },
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.language),
+          PopupMenuButton(
+            child: const Icon(
+              (Icons.language),
+            ),
+            onSelected: (value) {
+              switch (value) {
+                case 'te':
+                  print('TELUGU IS SELECTED');
+                case 'ta':
+                  print('TAMIL IS SELECTED');
+                case 'hi':
+                  print('HINDI IS SELECTED');
+                default:
+                  print('ENGLISH IS SELECTED');
+              }
+            },
+            itemBuilder: (BuildContext context) => <PopupMenuEntry>[
+              const PopupMenuItem(value: "en", child: Text('English')),
+              const PopupMenuItem(value: "te", child: Text('Telugu')),
+              const PopupMenuItem(value: "ta", child: Text('Tamil')),
+              const PopupMenuItem(value: "hi", child: Text('Hindi')),
+            ],
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.grid_view),
+          BlocBuilder<LayoutBloc, LayoutState>(
+            builder: (context, state) {
+              return IconButton(
+                onPressed: () {
+                  if (state.appLayout == AppLayout.listLayout) {
+                    BlocProvider.of<LayoutBloc>(context).add(
+                        const ChangeLayout(appLayout: AppLayout.listLayout));
+                  } else {
+                    BlocProvider.of<LayoutBloc>(context).add(
+                        const ChangeLayout(appLayout: AppLayout.gridLayout));
+                  }
+                },
+                icon: Icon(state.appLayout == AppLayout.gridLayout
+                    ? Icons.grid_view
+                    : Icons.list),
+              );
+            },
           ),
           PopupMenuButton<int>(
             itemBuilder: (context) => const [
-              PopupMenuItem(
-                value: 0,
-                child: Text('Feedback')),
-              PopupMenuItem(
-                value: 1,
-                child: Text('Share App')),
-              PopupMenuItem(
-                value: 2,
-                child: Text('Developer')),
-              PopupMenuItem(
-                value: 3,
-                child: Text('More Apps')),
+              PopupMenuItem(value: 0, child: Text('Feedback')),
+              PopupMenuItem(value: 1, child: Text('Share App')),
+              PopupMenuItem(value: 2, child: Text('Developer')),
+              PopupMenuItem(value: 3, child: Text('More Apps')),
             ],
             onSelected: (value) {
-               switch(value){
-                  case 0:{
+              switch (value) {
+                case 0:
+                  {
                     print('Feedback menu is clicked');
                   }
-                  case 1:{
+                case 1:
+                  {
                     print('Share App menu is clicked');
                   }
-                  case 2:{
+                case 2:
+                  {
                     print('Developer menu is clicked');
                   }
-                  case 3:{
+                case 3:
+                  {
                     print('More Apps menu is clicked');
                   }
-               }
+              }
             },
           )
         ],
