@@ -21,6 +21,12 @@ enum AppLocale {
   germanLocale,
 }
 
+enum AppSort{
+  date,
+  title,
+  description
+}
+
 enum AppLayout {
   listLayout,
   gridLayout,

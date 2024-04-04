@@ -8,6 +8,9 @@ class HomeEvent with _$HomeEvent {
   const factory HomeEvent.updateNote({required NoteModel note}) = UpdateNote;
   const factory HomeEvent.addNote({required NoteModel note}) = AddNote;
   const factory HomeEvent.deleteNote({required int id}) = DeleteNote;
+  const factory HomeEvent.sortByDate() = SortByDate;
+  const factory HomeEvent.sortByTitle() = SortByTitle;
+  const factory HomeEvent.sortByDescription() = SortByDescription;
 }
 
 

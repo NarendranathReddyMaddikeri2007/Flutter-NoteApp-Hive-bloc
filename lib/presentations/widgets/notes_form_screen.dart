@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app1/applications/homeBloc/bloc/home_bloc.dart';
@@ -70,11 +69,11 @@ class NotesFormScreen extends StatelessWidget {
                       final title = _titleController.value.text;
                       final description = _descriptionController.value.text;
                       final DateTime date = DateTime.now();
-      
+
                       if (title.isEmpty || description.isEmpty) {
                         return;
                       }
-      
+
                       if (type == ActionType.addNote) {
                         final NoteModel newNote = NoteModel(
                           title: title,
@@ -91,9 +90,7 @@ class NotesFormScreen extends StatelessWidget {
                               ? note!.date
                               : DateTime.now(),
                         );
-                        context
-                            .read<HomeBloc>()
-                            .add(UpdateNote(note: newNote));
+                        context.read<HomeBloc>().add(UpdateNote(note: newNote));
                       }
                       Navigator.of(context).pushAndRemoveUntil(
                         MaterialPageRoute(builder: (ctx) => HomeScreen()),

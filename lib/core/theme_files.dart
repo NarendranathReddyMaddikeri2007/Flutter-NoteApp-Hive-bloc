@@ -15,7 +15,6 @@ final globalDarkTheme = ThemeData(
               bottomStart: Radius.circular(8),
               bottomEnd: Radius.circular(16))),
     ),
-    
     popupMenuTheme: const PopupMenuThemeData(
         enableFeedback: true,
         elevation: 10,
@@ -30,57 +29,53 @@ final globalDarkTheme = ThemeData(
                 topEnd: Radius.circular(10),
                 bottomStart: Radius.circular(10),
                 bottomEnd: Radius.circular(30)))),
-    //cardColor: ,
     cardTheme: const CardTheme(
       color: Color(0xff202b31),
       elevation: 5,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusDirectional.only(
-              topStart: Radius.circular(35),
-              topEnd: Radius.circular(10),
-              bottomStart: Radius.circular(10),
-              bottomEnd: Radius.circular(35))),
+              topStart: Radius.circular(20),
+              topEnd: Radius.circular(20),
+              bottomStart: Radius.circular(20),
+              bottomEnd: Radius.circular(20))),
       shadowColor: Colors.orangeAccent,
     ),
     appBarTheme: const AppBarTheme(
         shadowColor: Colors.orange,
         iconTheme: IconThemeData(
             color: Color(0xffc5c8ca),
-            shadows: [Shadow(color: Colors.orange, blurRadius: 2)]),
+            shadows: [Shadow(color: Colors.orange, blurRadius: 3)]),
         actionsIconTheme: IconThemeData(
             color: Color(0xffc5c8ca),
-            shadows: [Shadow(color: Colors.orange, blurRadius: 2)]),
+            shadows: [Shadow(color: Colors.orange, blurRadius: 3)]),
         elevation: 3,
         backgroundColor: Color(0xff181c1f), //
         titleTextStyle:
             TextStyle(color: Color.fromRGBO(255, 255, 255, 1), fontSize: 20)),
-    textTheme: TextTheme(
-        bodyLarge: const TextStyle(
+    textTheme: const TextTheme(
+        titleMedium: TextStyle(
+          fontSize: 16,
+          color: Colors.orange,
+          fontWeight: FontWeight.bold,
+          overflow: TextOverflow.ellipsis,
+        ),
+        bodyLarge: TextStyle(
           color: Color(0xffc5c8ca),
           overflow: TextOverflow.ellipsis,
         ),
-        labelMedium: const TextStyle(
+        labelMedium: TextStyle(
           fontSize: 15,
           color: Color.fromARGB(255, 172, 168, 168),
           overflow: TextOverflow.ellipsis,
         ),
-        labelSmall: const TextStyle(
+        labelSmall: TextStyle(
           fontSize: 12,
           color: Color(0xffc5c8ca),
           overflow: TextOverflow.ellipsis,
         ),
-        bodySmall: const TextStyle(
+        bodySmall: TextStyle(
           color: Color(0xffc5c8ca),
           overflow: TextOverflow.ellipsis,
-        ),
-        displayMedium: const TextStyle(
-            color: Colors.orangeAccent,
-            overflow: TextOverflow.ellipsis,
-            fontWeight: FontWeight.bold),
-        titleMedium: TextStyle(
-          overflow: TextOverflow.ellipsis,
-          color:
-              Colors.orangeAccent.withAlpha(1), // <-- TextFormField input color
         )),
     inputDecorationTheme: InputDecorationTheme(
       border: InputBorder.none,
@@ -159,91 +154,50 @@ final globalLightTheme = ThemeData(
       elevation: 5,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusDirectional.only(
-              topStart: Radius.circular(35),
-              topEnd: Radius.circular(10),
-              bottomStart: Radius.circular(10),
-              bottomEnd: Radius.circular(35))),
+              topStart: Radius.circular(20),
+              topEnd: Radius.circular(20),
+              bottomStart: Radius.circular(20),
+              bottomEnd: Radius.circular(20))),
       shadowColor: Colors.orange,
     ),
     appBarTheme: const AppBarTheme(
         shadowColor: Colors.orange,
         iconTheme: IconThemeData(
             color: Colors.white,
-            shadows: [Shadow(color: Colors.orange, blurRadius: 1.6)]),
+            shadows: [Shadow(color: Colors.orange, blurRadius: 3)]),
         actionsIconTheme: IconThemeData(
             color: Colors.white,
-            shadows: [Shadow(color: Colors.orange, blurRadius: 1.6)]),
+            shadows: [Shadow(color: Colors.orange, blurRadius: 3)]),
         elevation: 3,
         backgroundColor: Color(0xff3487a5),
         titleTextStyle:
             TextStyle(color: Color.fromRGBO(255, 255, 255, 1), fontSize: 20)),
-    textTheme: TextTheme(
-              bodyLarge: const TextStyle(
-          color: Colors.black,
-          overflow: TextOverflow.ellipsis,
-        ),
-        labelMedium: const TextStyle(
-          fontSize: 15,
-          color: Colors.black,
-          overflow: TextOverflow.ellipsis,
-        ),
-        labelSmall: const TextStyle(
-          fontSize: 12,
-          color: Colors.black,
-          overflow: TextOverflow.ellipsis,
-        ),
-        bodySmall: const TextStyle(
-          color: Colors.black,
-          overflow: TextOverflow.ellipsis,
-        ),
-        displayMedium: const TextStyle(
-            color: Colors.orangeAccent,
-            overflow: TextOverflow.ellipsis,
-            fontWeight: FontWeight.bold),
-        titleMedium: TextStyle(
-          overflow: TextOverflow.ellipsis,
-          color:
-              Colors.orangeAccent.withAlpha(1),
-        )),
-        // bodyLarge: const TextStyle(
-        //   color: Colors.black,
-        //   overflow: TextOverflow.ellipsis,
-        // ),
-        // labelSmall: const TextStyle(
-        //   fontSize: 12,
-        //   color: Colors.black,
-        //   overflow: TextOverflow.ellipsis,
-        // ),
-        // bodySmall: TextStyle(color: Colors.black,),
-        // titleSmall: TextStyle(color: Colors.black,),
-        // displaySmall: TextStyle(color: Colors.black,),
-        // headlineSmall: TextStyle(color: Colors.black,),
-
-        // bodyMedium: TextStyle(color: Colors.black,),
-        // labelMedium: TextStyle(color: Colors.black,),
-        // titleMedium: TextStyle(color: Colors.black,),
-        // displayMedium:TextStyle(color: Colors.black,) ,
-        // headlineMedium:TextStyle(color: Colors.black,) ,
-
-        // labelLarge:TextStyle(color: Colors.black,)  ,
-        // bodyLarge:TextStyle(color: Colors.black,)  ,
-        // titleLarge: TextStyle(color: Colors.black,) ,
-        // displayLarge: TextStyle(color: Colors.black,) ,
-        // headlineLarge: TextStyle(color: Colors.black,) ,
-
-        // bodySmall: const TextStyle(
-        //   color: Color(0xff2f3336),
-        //   overflow: TextOverflow.ellipsis,
-        // ),
-        // displayMedium: const TextStyle(
-        //     color: Colors.orangeAccent,
-        //     overflow: TextOverflow.ellipsis,
-        //     fontWeight: FontWeight.bold),
-        // titleMedium: TextStyle(
-        //   overflow: TextOverflow.ellipsis,
-        //   color:
-        //       Colors.orangeAccent.withAlpha(1), // <-- TextFormField input color
-        // )
+    textTheme: const TextTheme(
+      bodyLarge: TextStyle(
+        color: Colors.black,
+        overflow: TextOverflow.ellipsis,
+      ),
+      labelMedium: TextStyle(
+        fontSize: 15,
+        color: Colors.black,
+        overflow: TextOverflow.ellipsis,
+      ),
+      labelSmall: TextStyle(
+        fontSize: 12,
+        color: Colors.black,
+        overflow: TextOverflow.ellipsis,
+      ),
+      titleMedium: TextStyle(
+        fontSize: 16,
+        color: Colors.orange,
+        fontWeight: FontWeight.bold,
+        overflow: TextOverflow.ellipsis,
+      ),
+      bodySmall: TextStyle(
+        color: Colors.black,
+        overflow: TextOverflow.ellipsis,
+      ),
+    ),
     inputDecorationTheme: InputDecorationTheme(
       border: InputBorder.none,
       errorBorder: InputBorder.none,

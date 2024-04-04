@@ -22,6 +22,29 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Note App'),
         actions: [
+          BlocBuilder<HomeBloc, HomeState>(
+            builder: (context, state) {
+              return PopupMenuButton(
+                
+                child: const Icon(
+                  (Icons.sort),
+                ),
+                onSelected: (value) {
+                  switch (value) {
+                    case AppSort.date: BlocProvider.of<HomeBloc>(context).add(const SortByDate());
+                    case AppSort.description:BlocProvider.of<HomeBloc>(context).add(const SortByDescription());
+                    case AppSort.title:BlocProvider.of<HomeBloc>(context).add(const SortByTitle());
+                    default:
+                  }
+                },
+                itemBuilder: (BuildContext context) => <PopupMenuEntry>[
+                  const PopupMenuItem(value: AppSort.date, child: Text('Date')),
+                  const PopupMenuItem(value: AppSort.title, child: Text('Title')),
+                  const PopupMenuItem(value: AppSort.description, child: Text('Description'))
+                ],
+              );
+            },
+          ),
           BlocBuilder<ThemeBloc, ThemeState>(
             buildWhen: (previous, current) =>
                 previous.themeMode != current.themeMode,
@@ -49,13 +72,9 @@ class HomeScreen extends StatelessWidget {
             onSelected: (value) {
               switch (value) {
                 case 'te':
-                  print('TELUGU IS SELECTED');
                 case 'ta':
-                  print('TAMIL IS SELECTED');
                 case 'hi':
-                  print('HINDI IS SELECTED');
                 default:
-                  print('ENGLISH IS SELECTED');
               }
             },
             itemBuilder: (BuildContext context) => <PopupMenuEntry>[
@@ -79,7 +98,7 @@ class HomeScreen extends StatelessWidget {
                 },
                 icon: Icon(state.appLayout == AppLayout.gridLayout
                     ? Icons.grid_view
-                    : Icons.list),
+                    : Icons.format_list_bulleted),
               );
             },
           ),

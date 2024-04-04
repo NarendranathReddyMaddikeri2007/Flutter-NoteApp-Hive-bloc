@@ -22,6 +22,9 @@ mixin _$HomeEvent {
     required TResult Function(NoteModel note) updateNote,
     required TResult Function(NoteModel note) addNote,
     required TResult Function(int id) deleteNote,
+    required TResult Function() sortByDate,
+    required TResult Function() sortByTitle,
+    required TResult Function() sortByDescription,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +33,9 @@ mixin _$HomeEvent {
     TResult? Function(NoteModel note)? updateNote,
     TResult? Function(NoteModel note)? addNote,
     TResult? Function(int id)? deleteNote,
+    TResult? Function()? sortByDate,
+    TResult? Function()? sortByTitle,
+    TResult? Function()? sortByDescription,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +44,9 @@ mixin _$HomeEvent {
     TResult Function(NoteModel note)? updateNote,
     TResult Function(NoteModel note)? addNote,
     TResult Function(int id)? deleteNote,
+    TResult Function()? sortByDate,
+    TResult Function()? sortByTitle,
+    TResult Function()? sortByDescription,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +56,9 @@ mixin _$HomeEvent {
     required TResult Function(UpdateNote value) updateNote,
     required TResult Function(AddNote value) addNote,
     required TResult Function(DeleteNote value) deleteNote,
+    required TResult Function(SortByDate value) sortByDate,
+    required TResult Function(SortByTitle value) sortByTitle,
+    required TResult Function(SortByDescription value) sortByDescription,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +67,9 @@ mixin _$HomeEvent {
     TResult? Function(UpdateNote value)? updateNote,
     TResult? Function(AddNote value)? addNote,
     TResult? Function(DeleteNote value)? deleteNote,
+    TResult? Function(SortByDate value)? sortByDate,
+    TResult? Function(SortByTitle value)? sortByTitle,
+    TResult? Function(SortByDescription value)? sortByDescription,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +78,9 @@ mixin _$HomeEvent {
     TResult Function(UpdateNote value)? updateNote,
     TResult Function(AddNote value)? addNote,
     TResult Function(DeleteNote value)? deleteNote,
+    TResult Function(SortByDate value)? sortByDate,
+    TResult Function(SortByTitle value)? sortByTitle,
+    TResult Function(SortByDescription value)? sortByDescription,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,6 +145,9 @@ class _$GetNotesImpl implements GetNotes {
     required TResult Function(NoteModel note) updateNote,
     required TResult Function(NoteModel note) addNote,
     required TResult Function(int id) deleteNote,
+    required TResult Function() sortByDate,
+    required TResult Function() sortByTitle,
+    required TResult Function() sortByDescription,
   }) {
     return getNotes();
   }
@@ -138,6 +159,9 @@ class _$GetNotesImpl implements GetNotes {
     TResult? Function(NoteModel note)? updateNote,
     TResult? Function(NoteModel note)? addNote,
     TResult? Function(int id)? deleteNote,
+    TResult? Function()? sortByDate,
+    TResult? Function()? sortByTitle,
+    TResult? Function()? sortByDescription,
   }) {
     return getNotes?.call();
   }
@@ -149,6 +173,9 @@ class _$GetNotesImpl implements GetNotes {
     TResult Function(NoteModel note)? updateNote,
     TResult Function(NoteModel note)? addNote,
     TResult Function(int id)? deleteNote,
+    TResult Function()? sortByDate,
+    TResult Function()? sortByTitle,
+    TResult Function()? sortByDescription,
     required TResult orElse(),
   }) {
     if (getNotes != null) {
@@ -164,6 +191,9 @@ class _$GetNotesImpl implements GetNotes {
     required TResult Function(UpdateNote value) updateNote,
     required TResult Function(AddNote value) addNote,
     required TResult Function(DeleteNote value) deleteNote,
+    required TResult Function(SortByDate value) sortByDate,
+    required TResult Function(SortByTitle value) sortByTitle,
+    required TResult Function(SortByDescription value) sortByDescription,
   }) {
     return getNotes(this);
   }
@@ -175,6 +205,9 @@ class _$GetNotesImpl implements GetNotes {
     TResult? Function(UpdateNote value)? updateNote,
     TResult? Function(AddNote value)? addNote,
     TResult? Function(DeleteNote value)? deleteNote,
+    TResult? Function(SortByDate value)? sortByDate,
+    TResult? Function(SortByTitle value)? sortByTitle,
+    TResult? Function(SortByDescription value)? sortByDescription,
   }) {
     return getNotes?.call(this);
   }
@@ -186,6 +219,9 @@ class _$GetNotesImpl implements GetNotes {
     TResult Function(UpdateNote value)? updateNote,
     TResult Function(AddNote value)? addNote,
     TResult Function(DeleteNote value)? deleteNote,
+    TResult Function(SortByDate value)? sortByDate,
+    TResult Function(SortByTitle value)? sortByTitle,
+    TResult Function(SortByDescription value)? sortByDescription,
     required TResult orElse(),
   }) {
     if (getNotes != null) {
@@ -267,6 +303,9 @@ class _$UpdateNoteImpl implements UpdateNote {
     required TResult Function(NoteModel note) updateNote,
     required TResult Function(NoteModel note) addNote,
     required TResult Function(int id) deleteNote,
+    required TResult Function() sortByDate,
+    required TResult Function() sortByTitle,
+    required TResult Function() sortByDescription,
   }) {
     return updateNote(note);
   }
@@ -278,6 +317,9 @@ class _$UpdateNoteImpl implements UpdateNote {
     TResult? Function(NoteModel note)? updateNote,
     TResult? Function(NoteModel note)? addNote,
     TResult? Function(int id)? deleteNote,
+    TResult? Function()? sortByDate,
+    TResult? Function()? sortByTitle,
+    TResult? Function()? sortByDescription,
   }) {
     return updateNote?.call(note);
   }
@@ -289,6 +331,9 @@ class _$UpdateNoteImpl implements UpdateNote {
     TResult Function(NoteModel note)? updateNote,
     TResult Function(NoteModel note)? addNote,
     TResult Function(int id)? deleteNote,
+    TResult Function()? sortByDate,
+    TResult Function()? sortByTitle,
+    TResult Function()? sortByDescription,
     required TResult orElse(),
   }) {
     if (updateNote != null) {
@@ -304,6 +349,9 @@ class _$UpdateNoteImpl implements UpdateNote {
     required TResult Function(UpdateNote value) updateNote,
     required TResult Function(AddNote value) addNote,
     required TResult Function(DeleteNote value) deleteNote,
+    required TResult Function(SortByDate value) sortByDate,
+    required TResult Function(SortByTitle value) sortByTitle,
+    required TResult Function(SortByDescription value) sortByDescription,
   }) {
     return updateNote(this);
   }
@@ -315,6 +363,9 @@ class _$UpdateNoteImpl implements UpdateNote {
     TResult? Function(UpdateNote value)? updateNote,
     TResult? Function(AddNote value)? addNote,
     TResult? Function(DeleteNote value)? deleteNote,
+    TResult? Function(SortByDate value)? sortByDate,
+    TResult? Function(SortByTitle value)? sortByTitle,
+    TResult? Function(SortByDescription value)? sortByDescription,
   }) {
     return updateNote?.call(this);
   }
@@ -326,6 +377,9 @@ class _$UpdateNoteImpl implements UpdateNote {
     TResult Function(UpdateNote value)? updateNote,
     TResult Function(AddNote value)? addNote,
     TResult Function(DeleteNote value)? deleteNote,
+    TResult Function(SortByDate value)? sortByDate,
+    TResult Function(SortByTitle value)? sortByTitle,
+    TResult Function(SortByDescription value)? sortByDescription,
     required TResult orElse(),
   }) {
     if (updateNote != null) {
@@ -412,6 +466,9 @@ class _$AddNoteImpl implements AddNote {
     required TResult Function(NoteModel note) updateNote,
     required TResult Function(NoteModel note) addNote,
     required TResult Function(int id) deleteNote,
+    required TResult Function() sortByDate,
+    required TResult Function() sortByTitle,
+    required TResult Function() sortByDescription,
   }) {
     return addNote(note);
   }
@@ -423,6 +480,9 @@ class _$AddNoteImpl implements AddNote {
     TResult? Function(NoteModel note)? updateNote,
     TResult? Function(NoteModel note)? addNote,
     TResult? Function(int id)? deleteNote,
+    TResult? Function()? sortByDate,
+    TResult? Function()? sortByTitle,
+    TResult? Function()? sortByDescription,
   }) {
     return addNote?.call(note);
   }
@@ -434,6 +494,9 @@ class _$AddNoteImpl implements AddNote {
     TResult Function(NoteModel note)? updateNote,
     TResult Function(NoteModel note)? addNote,
     TResult Function(int id)? deleteNote,
+    TResult Function()? sortByDate,
+    TResult Function()? sortByTitle,
+    TResult Function()? sortByDescription,
     required TResult orElse(),
   }) {
     if (addNote != null) {
@@ -449,6 +512,9 @@ class _$AddNoteImpl implements AddNote {
     required TResult Function(UpdateNote value) updateNote,
     required TResult Function(AddNote value) addNote,
     required TResult Function(DeleteNote value) deleteNote,
+    required TResult Function(SortByDate value) sortByDate,
+    required TResult Function(SortByTitle value) sortByTitle,
+    required TResult Function(SortByDescription value) sortByDescription,
   }) {
     return addNote(this);
   }
@@ -460,6 +526,9 @@ class _$AddNoteImpl implements AddNote {
     TResult? Function(UpdateNote value)? updateNote,
     TResult? Function(AddNote value)? addNote,
     TResult? Function(DeleteNote value)? deleteNote,
+    TResult? Function(SortByDate value)? sortByDate,
+    TResult? Function(SortByTitle value)? sortByTitle,
+    TResult? Function(SortByDescription value)? sortByDescription,
   }) {
     return addNote?.call(this);
   }
@@ -471,6 +540,9 @@ class _$AddNoteImpl implements AddNote {
     TResult Function(UpdateNote value)? updateNote,
     TResult Function(AddNote value)? addNote,
     TResult Function(DeleteNote value)? deleteNote,
+    TResult Function(SortByDate value)? sortByDate,
+    TResult Function(SortByTitle value)? sortByTitle,
+    TResult Function(SortByDescription value)? sortByDescription,
     required TResult orElse(),
   }) {
     if (addNote != null) {
@@ -557,6 +629,9 @@ class _$DeleteNoteImpl implements DeleteNote {
     required TResult Function(NoteModel note) updateNote,
     required TResult Function(NoteModel note) addNote,
     required TResult Function(int id) deleteNote,
+    required TResult Function() sortByDate,
+    required TResult Function() sortByTitle,
+    required TResult Function() sortByDescription,
   }) {
     return deleteNote(id);
   }
@@ -568,6 +643,9 @@ class _$DeleteNoteImpl implements DeleteNote {
     TResult? Function(NoteModel note)? updateNote,
     TResult? Function(NoteModel note)? addNote,
     TResult? Function(int id)? deleteNote,
+    TResult? Function()? sortByDate,
+    TResult? Function()? sortByTitle,
+    TResult? Function()? sortByDescription,
   }) {
     return deleteNote?.call(id);
   }
@@ -579,6 +657,9 @@ class _$DeleteNoteImpl implements DeleteNote {
     TResult Function(NoteModel note)? updateNote,
     TResult Function(NoteModel note)? addNote,
     TResult Function(int id)? deleteNote,
+    TResult Function()? sortByDate,
+    TResult Function()? sortByTitle,
+    TResult Function()? sortByDescription,
     required TResult orElse(),
   }) {
     if (deleteNote != null) {
@@ -594,6 +675,9 @@ class _$DeleteNoteImpl implements DeleteNote {
     required TResult Function(UpdateNote value) updateNote,
     required TResult Function(AddNote value) addNote,
     required TResult Function(DeleteNote value) deleteNote,
+    required TResult Function(SortByDate value) sortByDate,
+    required TResult Function(SortByTitle value) sortByTitle,
+    required TResult Function(SortByDescription value) sortByDescription,
   }) {
     return deleteNote(this);
   }
@@ -605,6 +689,9 @@ class _$DeleteNoteImpl implements DeleteNote {
     TResult? Function(UpdateNote value)? updateNote,
     TResult? Function(AddNote value)? addNote,
     TResult? Function(DeleteNote value)? deleteNote,
+    TResult? Function(SortByDate value)? sortByDate,
+    TResult? Function(SortByTitle value)? sortByTitle,
+    TResult? Function(SortByDescription value)? sortByDescription,
   }) {
     return deleteNote?.call(this);
   }
@@ -616,6 +703,9 @@ class _$DeleteNoteImpl implements DeleteNote {
     TResult Function(UpdateNote value)? updateNote,
     TResult Function(AddNote value)? addNote,
     TResult Function(DeleteNote value)? deleteNote,
+    TResult Function(SortByDate value)? sortByDate,
+    TResult Function(SortByTitle value)? sortByTitle,
+    TResult Function(SortByDescription value)? sortByDescription,
     required TResult orElse(),
   }) {
     if (deleteNote != null) {
@@ -632,6 +722,402 @@ abstract class DeleteNote implements HomeEvent {
   @JsonKey(ignore: true)
   _$$DeleteNoteImplCopyWith<_$DeleteNoteImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SortByDateImplCopyWith<$Res> {
+  factory _$$SortByDateImplCopyWith(
+          _$SortByDateImpl value, $Res Function(_$SortByDateImpl) then) =
+      __$$SortByDateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SortByDateImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$SortByDateImpl>
+    implements _$$SortByDateImplCopyWith<$Res> {
+  __$$SortByDateImplCopyWithImpl(
+      _$SortByDateImpl _value, $Res Function(_$SortByDateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SortByDateImpl implements SortByDate {
+  const _$SortByDateImpl();
+
+  @override
+  String toString() {
+    return 'HomeEvent.sortByDate()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SortByDateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getNotes,
+    required TResult Function(NoteModel note) updateNote,
+    required TResult Function(NoteModel note) addNote,
+    required TResult Function(int id) deleteNote,
+    required TResult Function() sortByDate,
+    required TResult Function() sortByTitle,
+    required TResult Function() sortByDescription,
+  }) {
+    return sortByDate();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getNotes,
+    TResult? Function(NoteModel note)? updateNote,
+    TResult? Function(NoteModel note)? addNote,
+    TResult? Function(int id)? deleteNote,
+    TResult? Function()? sortByDate,
+    TResult? Function()? sortByTitle,
+    TResult? Function()? sortByDescription,
+  }) {
+    return sortByDate?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getNotes,
+    TResult Function(NoteModel note)? updateNote,
+    TResult Function(NoteModel note)? addNote,
+    TResult Function(int id)? deleteNote,
+    TResult Function()? sortByDate,
+    TResult Function()? sortByTitle,
+    TResult Function()? sortByDescription,
+    required TResult orElse(),
+  }) {
+    if (sortByDate != null) {
+      return sortByDate();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetNotes value) getNotes,
+    required TResult Function(UpdateNote value) updateNote,
+    required TResult Function(AddNote value) addNote,
+    required TResult Function(DeleteNote value) deleteNote,
+    required TResult Function(SortByDate value) sortByDate,
+    required TResult Function(SortByTitle value) sortByTitle,
+    required TResult Function(SortByDescription value) sortByDescription,
+  }) {
+    return sortByDate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetNotes value)? getNotes,
+    TResult? Function(UpdateNote value)? updateNote,
+    TResult? Function(AddNote value)? addNote,
+    TResult? Function(DeleteNote value)? deleteNote,
+    TResult? Function(SortByDate value)? sortByDate,
+    TResult? Function(SortByTitle value)? sortByTitle,
+    TResult? Function(SortByDescription value)? sortByDescription,
+  }) {
+    return sortByDate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetNotes value)? getNotes,
+    TResult Function(UpdateNote value)? updateNote,
+    TResult Function(AddNote value)? addNote,
+    TResult Function(DeleteNote value)? deleteNote,
+    TResult Function(SortByDate value)? sortByDate,
+    TResult Function(SortByTitle value)? sortByTitle,
+    TResult Function(SortByDescription value)? sortByDescription,
+    required TResult orElse(),
+  }) {
+    if (sortByDate != null) {
+      return sortByDate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SortByDate implements HomeEvent {
+  const factory SortByDate() = _$SortByDateImpl;
+}
+
+/// @nodoc
+abstract class _$$SortByTitleImplCopyWith<$Res> {
+  factory _$$SortByTitleImplCopyWith(
+          _$SortByTitleImpl value, $Res Function(_$SortByTitleImpl) then) =
+      __$$SortByTitleImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SortByTitleImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$SortByTitleImpl>
+    implements _$$SortByTitleImplCopyWith<$Res> {
+  __$$SortByTitleImplCopyWithImpl(
+      _$SortByTitleImpl _value, $Res Function(_$SortByTitleImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SortByTitleImpl implements SortByTitle {
+  const _$SortByTitleImpl();
+
+  @override
+  String toString() {
+    return 'HomeEvent.sortByTitle()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SortByTitleImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getNotes,
+    required TResult Function(NoteModel note) updateNote,
+    required TResult Function(NoteModel note) addNote,
+    required TResult Function(int id) deleteNote,
+    required TResult Function() sortByDate,
+    required TResult Function() sortByTitle,
+    required TResult Function() sortByDescription,
+  }) {
+    return sortByTitle();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getNotes,
+    TResult? Function(NoteModel note)? updateNote,
+    TResult? Function(NoteModel note)? addNote,
+    TResult? Function(int id)? deleteNote,
+    TResult? Function()? sortByDate,
+    TResult? Function()? sortByTitle,
+    TResult? Function()? sortByDescription,
+  }) {
+    return sortByTitle?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getNotes,
+    TResult Function(NoteModel note)? updateNote,
+    TResult Function(NoteModel note)? addNote,
+    TResult Function(int id)? deleteNote,
+    TResult Function()? sortByDate,
+    TResult Function()? sortByTitle,
+    TResult Function()? sortByDescription,
+    required TResult orElse(),
+  }) {
+    if (sortByTitle != null) {
+      return sortByTitle();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetNotes value) getNotes,
+    required TResult Function(UpdateNote value) updateNote,
+    required TResult Function(AddNote value) addNote,
+    required TResult Function(DeleteNote value) deleteNote,
+    required TResult Function(SortByDate value) sortByDate,
+    required TResult Function(SortByTitle value) sortByTitle,
+    required TResult Function(SortByDescription value) sortByDescription,
+  }) {
+    return sortByTitle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetNotes value)? getNotes,
+    TResult? Function(UpdateNote value)? updateNote,
+    TResult? Function(AddNote value)? addNote,
+    TResult? Function(DeleteNote value)? deleteNote,
+    TResult? Function(SortByDate value)? sortByDate,
+    TResult? Function(SortByTitle value)? sortByTitle,
+    TResult? Function(SortByDescription value)? sortByDescription,
+  }) {
+    return sortByTitle?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetNotes value)? getNotes,
+    TResult Function(UpdateNote value)? updateNote,
+    TResult Function(AddNote value)? addNote,
+    TResult Function(DeleteNote value)? deleteNote,
+    TResult Function(SortByDate value)? sortByDate,
+    TResult Function(SortByTitle value)? sortByTitle,
+    TResult Function(SortByDescription value)? sortByDescription,
+    required TResult orElse(),
+  }) {
+    if (sortByTitle != null) {
+      return sortByTitle(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SortByTitle implements HomeEvent {
+  const factory SortByTitle() = _$SortByTitleImpl;
+}
+
+/// @nodoc
+abstract class _$$SortByDescriptionImplCopyWith<$Res> {
+  factory _$$SortByDescriptionImplCopyWith(_$SortByDescriptionImpl value,
+          $Res Function(_$SortByDescriptionImpl) then) =
+      __$$SortByDescriptionImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SortByDescriptionImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$SortByDescriptionImpl>
+    implements _$$SortByDescriptionImplCopyWith<$Res> {
+  __$$SortByDescriptionImplCopyWithImpl(_$SortByDescriptionImpl _value,
+      $Res Function(_$SortByDescriptionImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SortByDescriptionImpl implements SortByDescription {
+  const _$SortByDescriptionImpl();
+
+  @override
+  String toString() {
+    return 'HomeEvent.sortByDescription()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SortByDescriptionImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getNotes,
+    required TResult Function(NoteModel note) updateNote,
+    required TResult Function(NoteModel note) addNote,
+    required TResult Function(int id) deleteNote,
+    required TResult Function() sortByDate,
+    required TResult Function() sortByTitle,
+    required TResult Function() sortByDescription,
+  }) {
+    return sortByDescription();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getNotes,
+    TResult? Function(NoteModel note)? updateNote,
+    TResult? Function(NoteModel note)? addNote,
+    TResult? Function(int id)? deleteNote,
+    TResult? Function()? sortByDate,
+    TResult? Function()? sortByTitle,
+    TResult? Function()? sortByDescription,
+  }) {
+    return sortByDescription?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getNotes,
+    TResult Function(NoteModel note)? updateNote,
+    TResult Function(NoteModel note)? addNote,
+    TResult Function(int id)? deleteNote,
+    TResult Function()? sortByDate,
+    TResult Function()? sortByTitle,
+    TResult Function()? sortByDescription,
+    required TResult orElse(),
+  }) {
+    if (sortByDescription != null) {
+      return sortByDescription();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetNotes value) getNotes,
+    required TResult Function(UpdateNote value) updateNote,
+    required TResult Function(AddNote value) addNote,
+    required TResult Function(DeleteNote value) deleteNote,
+    required TResult Function(SortByDate value) sortByDate,
+    required TResult Function(SortByTitle value) sortByTitle,
+    required TResult Function(SortByDescription value) sortByDescription,
+  }) {
+    return sortByDescription(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetNotes value)? getNotes,
+    TResult? Function(UpdateNote value)? updateNote,
+    TResult? Function(AddNote value)? addNote,
+    TResult? Function(DeleteNote value)? deleteNote,
+    TResult? Function(SortByDate value)? sortByDate,
+    TResult? Function(SortByTitle value)? sortByTitle,
+    TResult? Function(SortByDescription value)? sortByDescription,
+  }) {
+    return sortByDescription?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetNotes value)? getNotes,
+    TResult Function(UpdateNote value)? updateNote,
+    TResult Function(AddNote value)? addNote,
+    TResult Function(DeleteNote value)? deleteNote,
+    TResult Function(SortByDate value)? sortByDate,
+    TResult Function(SortByTitle value)? sortByTitle,
+    TResult Function(SortByDescription value)? sortByDescription,
+    required TResult orElse(),
+  }) {
+    if (sortByDescription != null) {
+      return sortByDescription(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SortByDescription implements HomeEvent {
+  const factory SortByDescription() = _$SortByDescriptionImpl;
 }
 
 /// @nodoc
