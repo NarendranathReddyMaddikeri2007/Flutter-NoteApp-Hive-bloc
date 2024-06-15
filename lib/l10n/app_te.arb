@@ -1,0 +1,23 @@
+{
+    "@@locale": "te",
+    "homescreen_note_app" : "నోట్ యాప్",
+    "homescreen_date":"తేదీ",
+    "homescreen_title":"శీర్షిక",
+    "homescreen_description":"వివరణ",
+    "homescreen_telugu":"తెలుగు",
+    "homescreen_english":"ఇంగ్లీష్",
+    "homescreen_tamil":"తమిళం",
+    "homescreen_hindi":"హిందీ",
+    "homescreen_greek":"గ్రీకు",
+    "homescreen_french":"ఫ్రెంచ్",
+    "homescreen_more_apps":"మరిన్ని యాప్ లు",
+    "homescreen_feedback":"ఫీడ్ బ్యాక్",
+    "homescreen_developer":"యజమాని",
+    "homescreen_share_app":"యాప్ ని భాగస్వామ్యం చేయండి",
+    "homescreen_add_note":"గమనిక జోడించు",
+    "notescreen_enter_title_here":"శీర్షికను ఇక్కడ నమోదు చేయండి",
+    "notescreen_enter_description_here":"వివరణను ఇక్కడ నమోదు చేయండి",
+    "notescreen_add_note":"జోడించు",
+    "notescreen_update_note":"సవరించు",
+    "notescreen_delete_note":"తీసివేయు"
+}

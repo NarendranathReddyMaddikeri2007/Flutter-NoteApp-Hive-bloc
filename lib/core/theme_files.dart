@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 
 final globalDarkTheme = ThemeData(
     //scaffoldBackgroundColor: const Color(0xff181d20),
+    expansionTileTheme: const ExpansionTileThemeData(
+      iconColor: Color(0xffc5c8ca),
+      collapsedIconColor: Color(0xffc5c8ca),
+      
+    ),
     scaffoldBackgroundColor: Colors.black,
+    // iconTheme: const IconThemeData(
+    //         color: Colors.white,
+    //         shadows: [Shadow(color: Colors.orange, blurRadius: 3)]),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: Color(0xff2f4959),
       foregroundColor: Color(0xffc5c8ca),
@@ -10,10 +18,10 @@ final globalDarkTheme = ThemeData(
       elevation: 10,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusDirectional.only(
-              topStart: Radius.circular(16),
-              topEnd: Radius.circular(8),
-              bottomStart: Radius.circular(8),
-              bottomEnd: Radius.circular(16))),
+              topStart: Radius.circular(20),
+              topEnd: Radius.circular(20),
+              bottomStart: Radius.circular(20),
+              bottomEnd: Radius.circular(20))),
     ),
     popupMenuTheme: const PopupMenuThemeData(
         enableFeedback: true,
@@ -25,10 +33,10 @@ final globalDarkTheme = ThemeData(
         shadowColor: Colors.orange,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusDirectional.only(
-                topStart: Radius.circular(30),
-                topEnd: Radius.circular(10),
-                bottomStart: Radius.circular(10),
-                bottomEnd: Radius.circular(30)))),
+                topStart: Radius.circular(20),
+                topEnd: Radius.circular(20),
+                bottomStart: Radius.circular(20),
+                bottomEnd: Radius.circular(20)))),
     cardTheme: const CardTheme(
       color: Color(0xff202b31),
       elevation: 5,
@@ -63,20 +71,16 @@ final globalDarkTheme = ThemeData(
           color: Color(0xffc5c8ca),
           overflow: TextOverflow.ellipsis,
         ),
-        labelMedium: TextStyle(
-          fontSize: 15,
-          color: Color.fromARGB(255, 172, 168, 168),
-          overflow: TextOverflow.ellipsis,
-        ),
         labelSmall: TextStyle(
           fontSize: 12,
-          color: Color(0xffc5c8ca),
+          color: Color(0xffc5c8ca) ,//,Color(0xffc5c8ca)
           overflow: TextOverflow.ellipsis,
         ),
         bodySmall: TextStyle(
-          color: Color(0xffc5c8ca),
+          color: Color(0xffc5c8ca),//Color(0xffc5c8ca)
           overflow: TextOverflow.ellipsis,
-        )),
+        )
+        ),
     inputDecorationTheme: InputDecorationTheme(
       border: InputBorder.none,
       errorBorder: InputBorder.none,
@@ -120,9 +124,15 @@ final globalDarkTheme = ThemeData(
    */
 
 //========================================================================================
-
+//1 - scaff: Color(0xffddedf6), card: Color(0xffb9dbe6)
 final globalLightTheme = ThemeData(
-    scaffoldBackgroundColor: Colors.white, //const Color(0xffeef4f8)
+      expansionTileTheme: const ExpansionTileThemeData(
+      iconColor: Color(0xff202b31)
+    ),
+    scaffoldBackgroundColor: const Color(0xffddedf6), //const Color(0xffeef4f8)
+        iconTheme: const IconThemeData(
+            color: Colors.black,
+            shadows: [Shadow(color: Colors.orange, blurRadius: 3)]),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: Color(0xff3487a5),
       foregroundColor: Colors.white,
@@ -130,10 +140,10 @@ final globalLightTheme = ThemeData(
       elevation: 10,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusDirectional.only(
-              topStart: Radius.circular(16),
-              topEnd: Radius.circular(8),
-              bottomStart: Radius.circular(8),
-              bottomEnd: Radius.circular(16))),
+              topStart: Radius.circular(20),
+              topEnd: Radius.circular(20),
+              bottomStart: Radius.circular(20),
+              bottomEnd: Radius.circular(20))),
     ),
     popupMenuTheme: const PopupMenuThemeData(
         enableFeedback: true,
@@ -145,12 +155,12 @@ final globalLightTheme = ThemeData(
         shadowColor: Colors.orange,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusDirectional.only(
-                topStart: Radius.circular(30),
-                topEnd: Radius.circular(10),
-                bottomStart: Radius.circular(10),
-                bottomEnd: Radius.circular(30)))),
+                topStart: Radius.circular(20),
+                topEnd: Radius.circular(20),
+                bottomStart: Radius.circular(20),
+                bottomEnd: Radius.circular(20)))),
     cardTheme: const CardTheme(
-      color: Color(0xffe9f0f6),
+      color: Color(0xffb9dbe6),
       elevation: 5,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusDirectional.only(
@@ -177,14 +187,9 @@ final globalLightTheme = ThemeData(
         color: Colors.black,
         overflow: TextOverflow.ellipsis,
       ),
-      labelMedium: TextStyle(
-        fontSize: 15,
-        color: Colors.black,
-        overflow: TextOverflow.ellipsis,
-      ),
-      labelSmall: TextStyle(
+      labelSmall: TextStyle( //BUG
         fontSize: 12,
-        color: Colors.black,
+        color: Colors.black,//black
         overflow: TextOverflow.ellipsis,
       ),
       titleMedium: TextStyle(

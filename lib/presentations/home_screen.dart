@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app1/applications/homeBloc/bloc/home_bloc.dart';
 import 'package:note_app1/applications/layoutBloc/bloc/layout_bloc.dart';
+import 'package:note_app1/applications/localeBloc/bloc/locale_bloc.dart';
 import 'package:note_app1/applications/themeBloc/bloc/theme_bloc.dart';
 import 'package:note_app1/core/enum.dart';
 import 'package:note_app1/presentations/widgets/note_item_screen.dart';
 import 'package:note_app1/presentations/widgets/notes_form_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -20,27 +22,41 @@ class HomeScreen extends StatelessWidget {
     });
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Note App'),
+        title: Text(AppLocalizations.of(context)!.homescreen_note_app),
         actions: [
           BlocBuilder<HomeBloc, HomeState>(
             builder: (context, state) {
               return PopupMenuButton(
-                
                 child: const Icon(
                   (Icons.sort),
                 ),
                 onSelected: (value) {
                   switch (value) {
-                    case AppSort.date: BlocProvider.of<HomeBloc>(context).add(const SortByDate());
-                    case AppSort.description:BlocProvider.of<HomeBloc>(context).add(const SortByDescription());
-                    case AppSort.title:BlocProvider.of<HomeBloc>(context).add(const SortByTitle());
+                    case AppSort.date:
+                      BlocProvider.of<HomeBloc>(context)
+                          .add(const SortByDate());
+                    case AppSort.description:
+                      BlocProvider.of<HomeBloc>(context)
+                          .add(const SortByDescription());
+                    case AppSort.title:
+                      BlocProvider.of<HomeBloc>(context)
+                          .add(const SortByTitle());
                     default:
                   }
                 },
                 itemBuilder: (BuildContext context) => <PopupMenuEntry>[
-                  const PopupMenuItem(value: AppSort.date, child: Text('Date')),
-                  const PopupMenuItem(value: AppSort.title, child: Text('Title')),
-                  const PopupMenuItem(value: AppSort.description, child: Text('Description'))
+                  PopupMenuItem(
+                      value: AppSort.date,
+                      child:
+                          Text(AppLocalizations.of(context)!.homescreen_date)),
+                  PopupMenuItem(
+                      value: AppSort.title,
+                      child:
+                          Text(AppLocalizations.of(context)!.homescreen_title)),
+                  PopupMenuItem(
+                      value: AppSort.description,
+                      child: Text(
+                          AppLocalizations.of(context)!.homescreen_description))
                 ],
               );
             },
@@ -65,75 +81,91 @@ class HomeScreen extends StatelessWidget {
               );
             },
           ),
-          PopupMenuButton(
-            child: const Icon(
-              (Icons.language),
-            ),
-            onSelected: (value) {
-              switch (value) {
-                case 'te':
-                case 'ta':
-                case 'hi':
-                default:
-              }
+          BlocBuilder<LocaleBloc, LocaleState>(
+            builder: (context, state) {
+              return PopupMenuButton(
+                child: const Icon(
+                  (Icons.language),
+                ),
+                onSelected: (value) {
+                  switch (value) {
+                    case 0:
+                      BlocProvider.of<LocaleBloc>(context).add(
+                          const ChangeLocale(
+                              appLocale: AppLocale.teluguLocale));
+                    case 1:
+                      BlocProvider.of<LocaleBloc>(context).add(
+                          const ChangeLocale(appLocale: AppLocale.greekLocale));
+                    case 2:
+                      BlocProvider.of<LocaleBloc>(context).add(
+                          const ChangeLocale(
+                              appLocale: AppLocale.englishLocale));
+                    case 3:
+                      BlocProvider.of<LocaleBloc>(context).add(
+                          const ChangeLocale(appLocale: AppLocale.tamilLocale));
+                    default:
+                      BlocProvider.of<LocaleBloc>(context).add(
+                          const ChangeLocale(
+                              appLocale: AppLocale.englishLocale));
+                  }
+                },
+                itemBuilder: (BuildContext context) => <PopupMenuEntry>[
+                  PopupMenuItem(
+                      value: 0,
+                      child: Text(
+                          AppLocalizations.of(context)!.homescreen_telugu)),
+                  PopupMenuItem(
+                      value: 1,
+                      child:
+                          Text(AppLocalizations.of(context)!.homescreen_greek)),
+                  PopupMenuItem(
+                      value: 2,
+                      child: Text(
+                          AppLocalizations.of(context)!.homescreen_english)),
+                  PopupMenuItem(
+                      value: 3,
+                      child:
+                          Text(AppLocalizations.of(context)!.homescreen_tamil)),
+                ],
+              );
             },
-            itemBuilder: (BuildContext context) => <PopupMenuEntry>[
-              const PopupMenuItem(value: "en", child: Text('English')),
-              const PopupMenuItem(value: "te", child: Text('Telugu')),
-              const PopupMenuItem(value: "ta", child: Text('Tamil')),
-              const PopupMenuItem(value: "hi", child: Text('Hindi')),
-            ],
           ),
           BlocBuilder<LayoutBloc, LayoutState>(
             builder: (context, state) {
               return IconButton(
                 onPressed: () {
-                  if (state.appLayout == AppLayout.listLayout) {
-                    BlocProvider.of<LayoutBloc>(context).add(
-                        const ChangeLayout(appLayout: AppLayout.listLayout));
-                  } else {
-                    BlocProvider.of<LayoutBloc>(context).add(
-                        const ChangeLayout(appLayout: AppLayout.gridLayout));
-                  }
+                  BlocProvider.of<LayoutBloc>(context)
+                      .add(ChangeLayout(count: state.count + 1));
                 },
-                icon: Icon(state.appLayout == AppLayout.gridLayout
-                    ? Icons.grid_view
-                    : Icons.format_list_bulleted),
+                icon: Icon(getLayoutIcon(count: state.count)),
               );
             },
           ),
           PopupMenuButton<int>(
-            itemBuilder: (context) => const [
-              PopupMenuItem(value: 0, child: Text('Feedback')),
-              PopupMenuItem(value: 1, child: Text('Share App')),
-              PopupMenuItem(value: 2, child: Text('Developer')),
-              PopupMenuItem(value: 3, child: Text('More Apps')),
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                  value: 0,
+                  child:
+                      Text(AppLocalizations.of(context)!.homescreen_feedback)),
+              PopupMenuItem(
+                  value: 1,
+                  child:
+                      Text(AppLocalizations.of(context)!.homescreen_share_app)),
+              PopupMenuItem(
+                  value: 2,
+                  child:
+                      Text(AppLocalizations.of(context)!.homescreen_developer)),
+              PopupMenuItem(
+                  value: 3,
+                  child:
+                      Text(AppLocalizations.of(context)!.homescreen_more_apps)),
             ],
-            onSelected: (value) {
-              switch (value) {
-                case 0:
-                  {
-                    print('Feedback menu is clicked');
-                  }
-                case 1:
-                  {
-                    print('Share App menu is clicked');
-                  }
-                case 2:
-                  {
-                    print('Developer menu is clicked');
-                  }
-                case 3:
-                  {
-                    print('More Apps menu is clicked');
-                  }
-              }
-            },
+            onSelected: (value) {},
           )
         ],
       ),
       floatingActionButton: FloatingActionButton(
-          tooltip: 'Add Note',
+          tooltip: AppLocalizations.of(context)!.homescreen_add_note,
           onPressed: () {
             Navigator.of(context).push(MaterialPageRoute(builder: (ctx) {
               return NotesFormScreen(
@@ -152,5 +184,16 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  IconData getLayoutIcon({required int count}) {
+    switch (count) {
+      case 1:
+        return Icons.expand_rounded;
+      case 0:
+        return Icons.grid_view;
+      default:
+        return Icons.format_list_bulleted;
+    }
   }
 }

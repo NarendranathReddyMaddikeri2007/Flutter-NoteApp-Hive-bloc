@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app1/applications/homeBloc/bloc/home_bloc.dart';
-import 'package:note_app1/core/constant_values.dart';
 import 'package:note_app1/core/enum.dart';
-import 'package:note_app1/core/theme_files.dart';
 import 'package:note_app1/domain/home/model/note_model.dart';
 import 'package:note_app1/presentations/home_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NotesFormScreen extends StatelessWidget {
   NotesFormScreen({super.key, required this.type, this.note});
@@ -34,16 +33,35 @@ class NotesFormScreen extends StatelessWidget {
     }
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Note App'),
+        title: Text(AppLocalizations.of(context)!.homescreen_note_app),
       ),
       body: ListView(
         padding: const EdgeInsets.all(15),
         scrollDirection: Axis.vertical,
         children: [
+          // SegmentedButton(
+          //   emptySelectionAllowed: true,
+          //   segments: const <ButtonSegment<AppTags>>[
+          //     ButtonSegment<AppTags>(
+          //       value: AppTags.password,
+          //       label: Text('Day'),
+          //     ),
+          //     ButtonSegment<AppTags>(
+          //       value: AppTags.links,
+          //       label: Text('Week'),
+          //     ),
+          //     ButtonSegment<AppTags>(
+          //       value: AppTags.note,
+          //       label: Text('Month'),
+          //     ),
+          //   ],
+          //   selected: const <AppTags>{},
+          // ),
           TextFormField(
             controller: _titleController,
-            decoration: const InputDecoration(
-              hintText: 'Enter title here',
+            decoration: InputDecoration(
+              hintText:
+                  AppLocalizations.of(context)!.notescreen_enter_title_here,
             ),
             minLines: 1,
           ),
@@ -52,8 +70,9 @@ class NotesFormScreen extends StatelessWidget {
           ),
           TextFormField(
             controller: _descriptionController,
-            decoration: const InputDecoration(
-              hintText: 'Enter description here',
+            decoration: InputDecoration(
+              hintText: AppLocalizations.of(context)!
+                  .notescreen_enter_description_here,
             ),
             maxLines: 10,
           ),
@@ -99,8 +118,9 @@ class NotesFormScreen extends StatelessWidget {
                     },
                     child: Text(
                         type == ActionType.editNote
-                            ? 'Update Note'
-                            : 'Add Note',
+                            ? AppLocalizations.of(context)!
+                                .notescreen_update_note
+                            : AppLocalizations.of(context)!.notescreen_add_note,
                         style: Theme.of(context).textTheme.labelSmall)),
                 Visibility(
                     visible: type == ActionType.editNote,
@@ -117,7 +137,8 @@ class NotesFormScreen extends StatelessWidget {
                             (route) => false,
                           );
                         },
-                        child: const Text('Delete Note'))),
+                        child: Text(AppLocalizations.of(context)!
+                            .notescreen_delete_note))),
               ],
             ),
           )

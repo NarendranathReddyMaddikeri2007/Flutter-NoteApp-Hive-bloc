@@ -1,7 +1,7 @@
 
 
 
-import 'package:flutter/src/material/app.dart';
+import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:note_app1/domain/home/model/note_model.dart';

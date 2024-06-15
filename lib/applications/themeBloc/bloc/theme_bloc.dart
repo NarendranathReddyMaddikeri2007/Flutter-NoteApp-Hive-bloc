@@ -9,7 +9,6 @@ part 'theme_bloc.freezed.dart';
 class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   ThemeBloc() : super(ThemeState.initial()) {
     on<ChangeTheme>((event, emit) {
-      print('ChangeTheme to ${state.themeMode}');
       if (event.themeMode == ThemeMode.light) {
         emit(const ThemeState(themeMode: ThemeMode.dark));
       } else if (event.themeMode == ThemeMode.dark) {

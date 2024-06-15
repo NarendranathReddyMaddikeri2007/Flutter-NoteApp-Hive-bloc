@@ -16,36 +16,36 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$LayoutEvent {
-  AppLayout get appLayout => throw _privateConstructorUsedError;
+  int get count => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AppLayout appLayout) changeTheme,
+    required TResult Function(int count) changeLayout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(AppLayout appLayout)? changeTheme,
+    TResult? Function(int count)? changeLayout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AppLayout appLayout)? changeTheme,
+    TResult Function(int count)? changeLayout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ChangeLayout value) changeTheme,
+    required TResult Function(ChangeLayout value) changeLayout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChangeLayout value)? changeTheme,
+    TResult? Function(ChangeLayout value)? changeLayout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChangeLayout value)? changeTheme,
+    TResult Function(ChangeLayout value)? changeLayout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +61,7 @@ abstract class $LayoutEventCopyWith<$Res> {
           LayoutEvent value, $Res Function(LayoutEvent) then) =
       _$LayoutEventCopyWithImpl<$Res, LayoutEvent>;
   @useResult
-  $Res call({AppLayout appLayout});
+  $Res call({int count});
 }
 
 /// @nodoc
@@ -77,13 +77,13 @@ class _$LayoutEventCopyWithImpl<$Res, $Val extends LayoutEvent>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? appLayout = null,
+    Object? count = null,
   }) {
     return _then(_value.copyWith(
-      appLayout: null == appLayout
-          ? _value.appLayout
-          : appLayout // ignore: cast_nullable_to_non_nullable
-              as AppLayout,
+      count: null == count
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -96,7 +96,7 @@ abstract class _$$ChangeLayoutImplCopyWith<$Res>
       __$$ChangeLayoutImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AppLayout appLayout});
+  $Res call({int count});
 }
 
 /// @nodoc
@@ -110,13 +110,13 @@ class __$$ChangeLayoutImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? appLayout = null,
+    Object? count = null,
   }) {
     return _then(_$ChangeLayoutImpl(
-      appLayout: null == appLayout
-          ? _value.appLayout
-          : appLayout // ignore: cast_nullable_to_non_nullable
-              as AppLayout,
+      count: null == count
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -124,14 +124,14 @@ class __$$ChangeLayoutImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ChangeLayoutImpl implements ChangeLayout {
-  const _$ChangeLayoutImpl({required this.appLayout});
+  const _$ChangeLayoutImpl({required this.count});
 
   @override
-  final AppLayout appLayout;
+  final int count;
 
   @override
   String toString() {
-    return 'LayoutEvent.changeTheme(appLayout: $appLayout)';
+    return 'LayoutEvent.changeLayout(count: $count)';
   }
 
   @override
@@ -139,12 +139,11 @@ class _$ChangeLayoutImpl implements ChangeLayout {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ChangeLayoutImpl &&
-            (identical(other.appLayout, appLayout) ||
-                other.appLayout == appLayout));
+            (identical(other.count, count) || other.count == count));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, appLayout);
+  int get hashCode => Object.hash(runtimeType, count);
 
   @JsonKey(ignore: true)
   @override
@@ -155,27 +154,27 @@ class _$ChangeLayoutImpl implements ChangeLayout {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AppLayout appLayout) changeTheme,
+    required TResult Function(int count) changeLayout,
   }) {
-    return changeTheme(appLayout);
+    return changeLayout(count);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(AppLayout appLayout)? changeTheme,
+    TResult? Function(int count)? changeLayout,
   }) {
-    return changeTheme?.call(appLayout);
+    return changeLayout?.call(count);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AppLayout appLayout)? changeTheme,
+    TResult Function(int count)? changeLayout,
     required TResult orElse(),
   }) {
-    if (changeTheme != null) {
-      return changeTheme(appLayout);
+    if (changeLayout != null) {
+      return changeLayout(count);
     }
     return orElse();
   }
@@ -183,38 +182,37 @@ class _$ChangeLayoutImpl implements ChangeLayout {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ChangeLayout value) changeTheme,
+    required TResult Function(ChangeLayout value) changeLayout,
   }) {
-    return changeTheme(this);
+    return changeLayout(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChangeLayout value)? changeTheme,
+    TResult? Function(ChangeLayout value)? changeLayout,
   }) {
-    return changeTheme?.call(this);
+    return changeLayout?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChangeLayout value)? changeTheme,
+    TResult Function(ChangeLayout value)? changeLayout,
     required TResult orElse(),
   }) {
-    if (changeTheme != null) {
-      return changeTheme(this);
+    if (changeLayout != null) {
+      return changeLayout(this);
     }
     return orElse();
   }
 }
 
 abstract class ChangeLayout implements LayoutEvent {
-  const factory ChangeLayout({required final AppLayout appLayout}) =
-      _$ChangeLayoutImpl;
+  const factory ChangeLayout({required final int count}) = _$ChangeLayoutImpl;
 
   @override
-  AppLayout get appLayout;
+  int get count;
   @override
   @JsonKey(ignore: true)
   _$$ChangeLayoutImplCopyWith<_$ChangeLayoutImpl> get copyWith =>
@@ -223,7 +221,7 @@ abstract class ChangeLayout implements LayoutEvent {
 
 /// @nodoc
 mixin _$LayoutState {
-  AppLayout get appLayout => throw _privateConstructorUsedError;
+  int get count => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $LayoutStateCopyWith<LayoutState> get copyWith =>
@@ -236,7 +234,7 @@ abstract class $LayoutStateCopyWith<$Res> {
           LayoutState value, $Res Function(LayoutState) then) =
       _$LayoutStateCopyWithImpl<$Res, LayoutState>;
   @useResult
-  $Res call({AppLayout appLayout});
+  $Res call({int count});
 }
 
 /// @nodoc
@@ -252,13 +250,13 @@ class _$LayoutStateCopyWithImpl<$Res, $Val extends LayoutState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? appLayout = null,
+    Object? count = null,
   }) {
     return _then(_value.copyWith(
-      appLayout: null == appLayout
-          ? _value.appLayout
-          : appLayout // ignore: cast_nullable_to_non_nullable
-              as AppLayout,
+      count: null == count
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -271,7 +269,7 @@ abstract class _$$LayoutStateImplCopyWith<$Res>
       __$$LayoutStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AppLayout appLayout});
+  $Res call({int count});
 }
 
 /// @nodoc
@@ -285,13 +283,13 @@ class __$$LayoutStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? appLayout = null,
+    Object? count = null,
   }) {
     return _then(_$LayoutStateImpl(
-      appLayout: null == appLayout
-          ? _value.appLayout
-          : appLayout // ignore: cast_nullable_to_non_nullable
-              as AppLayout,
+      count: null == count
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -299,14 +297,14 @@ class __$$LayoutStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LayoutStateImpl implements _LayoutState {
-  const _$LayoutStateImpl({required this.appLayout});
+  const _$LayoutStateImpl({required this.count});
 
   @override
-  final AppLayout appLayout;
+  final int count;
 
   @override
   String toString() {
-    return 'LayoutState(appLayout: $appLayout)';
+    return 'LayoutState(count: $count)';
   }
 
   @override
@@ -314,12 +312,11 @@ class _$LayoutStateImpl implements _LayoutState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LayoutStateImpl &&
-            (identical(other.appLayout, appLayout) ||
-                other.appLayout == appLayout));
+            (identical(other.count, count) || other.count == count));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, appLayout);
+  int get hashCode => Object.hash(runtimeType, count);
 
   @JsonKey(ignore: true)
   @override
@@ -329,11 +326,10 @@ class _$LayoutStateImpl implements _LayoutState {
 }
 
 abstract class _LayoutState implements LayoutState {
-  const factory _LayoutState({required final AppLayout appLayout}) =
-      _$LayoutStateImpl;
+  const factory _LayoutState({required final int count}) = _$LayoutStateImpl;
 
   @override
-  AppLayout get appLayout;
+  int get count;
   @override
   @JsonKey(ignore: true)
   _$$LayoutStateImplCopyWith<_$LayoutStateImpl> get copyWith =>

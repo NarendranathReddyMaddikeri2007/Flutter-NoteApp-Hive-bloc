@@ -1,0 +1,23 @@
+{
+    "@@locale": "ta",
+    "homescreen_note_app" : "குறிப்பு பயன்பாடு",
+    "homescreen_date":"தேதி",
+    "homescreen_title":"தலைப்பு",
+    "homescreen_description":"வருணனை",
+    "homescreen_telugu":"தெலுங்கு",
+    "homescreen_english":"ஆங்கிலம்",
+    "homescreen_tamil":"தமிழ்",
+    "homescreen_hindi":"இந்தி",
+    "homescreen_greek":"கிரேக்கம்",
+    "homescreen_french":"பிரெஞ்சு",
+    "homescreen_more_apps":"மேலும் பயன்பாடுகள்",
+    "homescreen_feedback":"பின்னூட்டம்",
+    "homescreen_developer":"உரிமையாளர்",
+    "homescreen_share_app":"பயன்பாட்டைப் பகிரவும்",
+    "homescreen_add_note":"சேர்",
+    "notescreen_enter_title_here":"தலைப்பை இங்கே உள்ளிடவும்",
+    "notescreen_enter_description_here":"விளக்கத்தை இங்கே உள்ளிடவும்",
+    "notescreen_add_note":"சேர்",
+    "notescreen_update_note":"புதுப்பி",
+    "notescreen_delete_note":"நீக்கு"
+}

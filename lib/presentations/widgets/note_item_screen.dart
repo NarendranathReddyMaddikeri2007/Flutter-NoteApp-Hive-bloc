@@ -4,7 +4,6 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:note_app1/applications/layoutBloc/bloc/layout_bloc.dart';
 import 'package:note_app1/core/constant_values.dart';
 import 'package:note_app1/core/enum.dart';
-import 'package:note_app1/core/theme_files.dart';
 import 'package:note_app1/domain/home/model/note_model.dart';
 import 'package:note_app1/presentations/widgets/notes_form_screen.dart';
 
@@ -22,8 +21,8 @@ class NoteListLayoutWidget extends StatelessWidget {
     height = MediaQuery.of(context).size.height;
     return BlocBuilder<LayoutBloc, LayoutState>(
       builder: (context, state) {
-        switch (state.appLayout) {
-          case AppLayout.gridLayout:
+        switch (state.count) {
+          case 0: //case AppLayout.gridLayout:
             return MasonryGridView.count(
               crossAxisCount: (width / 150).floor(),
               mainAxisSpacing: 4,
@@ -34,7 +33,52 @@ class NoteListLayoutWidget extends StatelessWidget {
                 return NoteGridItemWidget(note: note);
               },
             );
-          case AppLayout.listLayout:
+          case 1: //case AppLayout.expandLayout:
+            return ListView.builder(
+              itemCount: noteList.length,
+              itemBuilder: (context, index) {
+                final NoteModel note = noteList[index];
+                return SizedBox(
+                  width: width * 0.95,
+                  child: Card(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      child: ExpansionTile(
+                        childrenPadding: const EdgeInsets.all(8),
+                        expandedAlignment: Alignment.center,
+                        trailing: InkWell(
+                          child: const Icon(Icons.edit),
+                          onTap: () {
+                            Navigator.of(context)
+                                .push(MaterialPageRoute(builder: (ctx) {
+                              return NotesFormScreen(
+                                type: ActionType.editNote,
+                                note: note,
+                              );
+                            }));
+                          },
+                        ),
+                        title: Text(note.title,
+                            maxLines: 1,
+                            style: Theme.of(context).textTheme.titleMedium),
+                        subtitle: Text(getDateFormat(dateTime: note.date),
+                            maxLines: 1,
+                            style: Theme.of(context).textTheme.labelSmall),
+                        //
+                        //style: const TextStyle(color: Color.fromARGB(255, 176, 154, 118))),
+                        children: [
+                          Text(note.description,
+                              maxLines: 5,
+                              style: Theme.of(context).textTheme.bodyLarge),
+                          //style: const TextStyle(color: Color.fromARGB(255, 176, 154, 118)))
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              },
+            );
+          case 2: //AppLayout.listLayout
             return ListView.builder(
               itemCount: noteList.length,
               itemBuilder: (context, index) {
@@ -60,16 +104,19 @@ class NoteListLayoutWidget extends StatelessWidget {
                             Text(note.title,
                                 maxLines: 1,
                                 style: Theme.of(context).textTheme.titleMedium),
-                            Text(note.description,
-                                maxLines: 1,
-                                style: Theme.of(context).textTheme.bodyLarge),
+                            Text(
+                              note.description,
+                              maxLines: 1,
+                              style: const TextStyle(
+                                  color: Color.fromARGB(255, 176, 154, 118)),
+                            ),
                             const SizedBox(
                               height: 15,
                             ),
                             Text(
                               getDateFormat(dateTime: note.date),
-                              
-                              style:  Theme.of(context).textTheme.labelSmall,
+                              style: const TextStyle(
+                                  color: Color.fromARGB(255, 176, 154, 118)),
                             )
                           ],
                         ),
