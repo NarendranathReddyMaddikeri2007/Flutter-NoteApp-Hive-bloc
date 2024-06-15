@@ -10,26 +10,11 @@ class LayoutBloc extends Bloc<LayoutEvent, LayoutState> {
   
   LayoutBloc() : super(LayoutState.initial()) {
     on<LayoutEvent>((event, emit) {
-      switch(event.count%3){
-         case 0:{
-           emit(const LayoutState(count: 0));
-           break;
-         }
-         case 1: {
-          emit(const LayoutState(count: 1));
-          break;
-         }
-        //  case 2: {
-        //   emit(const LayoutState(count: 2));
-        //   break;
-        //  }
-         default:  emit(const LayoutState(count: 0));
+      if (event.appLayout == AppLayout.gridLayout) {
+        emit(const LayoutState(appLayout: AppLayout.listLayout));
+      } else {
+        emit(const LayoutState(appLayout: AppLayout.gridLayout));
       }
-      // if (event.appLayout == AppLayout.gridLayout) {
-      //   emit(const LayoutState(appLayout: AppLayout.listLayout));
-      // } else {
-      //   emit(const LayoutState(appLayout: AppLayout.gridLayout));
-      // }
     });
   }
 }

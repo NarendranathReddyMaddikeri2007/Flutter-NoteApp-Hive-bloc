@@ -21,8 +21,8 @@ class NoteListLayoutWidget extends StatelessWidget {
     height = MediaQuery.of(context).size.height;
     return BlocBuilder<LayoutBloc, LayoutState>(
       builder: (context, state) {
-        switch (state.count) {
-          case 0: //case AppLayout.gridLayout:
+        switch (state.appLayout) {
+          case AppLayout.gridLayout:
             return MasonryGridView.count(
               crossAxisCount: (width / 150).floor(),
               mainAxisSpacing: 4,
@@ -33,7 +33,7 @@ class NoteListLayoutWidget extends StatelessWidget {
                 return NoteGridItemWidget(note: note);
               },
             );
-          case 1: //case AppLayout.expandLayout:
+          case AppLayout.listLayout:
             return ListView.builder(
               itemCount: noteList.length,
               itemBuilder: (context, index) {
@@ -72,54 +72,6 @@ class NoteListLayoutWidget extends StatelessWidget {
                               style: Theme.of(context).textTheme.bodyLarge),
                           //style: const TextStyle(color: Color.fromARGB(255, 176, 154, 118)))
                         ],
-                      ),
-                    ),
-                  ),
-                );
-              },
-            );
-          case 2: //AppLayout.listLayout
-            return ListView.builder(
-              itemCount: noteList.length,
-              itemBuilder: (context, index) {
-                final NoteModel note = noteList[index];
-                return InkWell(
-                  onTap: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (ctx) {
-                      return NotesFormScreen(
-                        type: ActionType.editNote,
-                        note: note,
-                      );
-                    }));
-                  },
-                  child: Card(
-                    child: SizedBox(
-                      width: width * 0.95,
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                            top: 5, bottom: 5, left: 20, right: 20),
-                        child: Column(
-                          children: [
-                            Text(note.title,
-                                maxLines: 1,
-                                style: Theme.of(context).textTheme.titleMedium),
-                            Text(
-                              note.description,
-                              maxLines: 1,
-                              style: const TextStyle(
-                                  color: Color.fromARGB(255, 176, 154, 118)),
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            Text(
-                              getDateFormat(dateTime: note.date),
-                              style: const TextStyle(
-                                  color: Color.fromARGB(255, 176, 154, 118)),
-                            )
-                          ],
-                        ),
                       ),
                     ),
                   ),
